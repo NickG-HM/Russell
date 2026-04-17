@@ -49,6 +49,29 @@ function absUrl(u) {
   return /^[a-z][a-z0-9+.-]*:/i.test(String(u || ''));
 }
 
+/** Absolute URL for social previews (og:image); requires publicSiteUrl when og is site-relative. */
+function absolutePublicUrl(relativeUnderSiteRoot) {
+  const base = String(site.publicSiteUrl || '').replace(/\/$/, '');
+  const tail = String(relativeUnderSiteRoot || '').replace(/^\/*/, '');
+  if (!tail) return '';
+  if (!base) return '';
+  return `${base}/${tail}`;
+}
+
+function resolveOgImageUrl() {
+  const og = site.cdn.ogImage;
+  if (!og) return '';
+  if (absUrl(og)) return String(og);
+  return absolutePublicUrl(og);
+}
+
+function resolveFaviconHref(assetsPrefix) {
+  const fav = site.cdn.favicon;
+  if (!fav) return '';
+  if (absUrl(fav)) return String(fav);
+  return `${assetsPrefix}${String(fav).replace(/^\//, '')}`;
+}
+
 /** Absolute URLs (http:, mailto:, etc.) pass through; site-root paths use relHref. */
 function navTargetHref(outPath, u) {
   if (u == null || u === '') return '#';
@@ -172,11 +195,11 @@ function buildContext(outPath, route) {
     KEYWORDS: escapeAttr(site.seoDefaults.keywords),
     OG_TITLE: escapeAttr(site.seoDefaults.ogTitle),
     OG_DESCRIPTION: escapeAttr(site.seoDefaults.description),
-    OG_IMAGE: escapeAttr(site.cdn.ogImage),
+    OG_IMAGE: escapeAttr(resolveOgImageUrl()),
     OG_IMAGE_WIDTH: site.seoDefaults.ogImageWidth,
     OG_IMAGE_HEIGHT: site.seoDefaults.ogImageHeight,
     OG_TYPE: site.seoDefaults.ogType,
-    FAVICON_URL: escapeAttr(site.cdn.favicon),
+    FAVICON_URL: escapeAttr(resolveFaviconHref(ap)),
     CSS_A: site.stylesheets[0],
     CSS_B: site.stylesheets[1],
     CSS_C: site.stylesheets[2],

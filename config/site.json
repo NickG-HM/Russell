@@ -1,4 +1,5 @@
 {
+  "publicSiteUrl": "https://nickg-hm.github.io/Russell",
   "brand": {
     "name": "Russell's",
     "logoAlt": "Russell's"
@@ -23,15 +24,15 @@
     "bundleComplete": "products/bundle-complete/index.html"
   },
   "external": {
-    "shopifyAccount": "https://itsnoonworld.myshopify.com/account",
-    "instagram": "https://www.instagram.com/itsnoon.world",
-    "tiktok": "https://www.tiktok.com/@noon.world",
+    "shopifyAccount": "https://russells.store/account",
+    "instagram": "https://www.instagram.com/russellspet/",
+    "tiktok": "https://www.tiktok.com/",
     "instagramIcon": "https://cdn.shopify.com/oxygen-v2/36966/28223/58852/2736878/assets/instagram-iwwm1bK9.svg?width=18&height=18&crop=center",
     "tiktokIcon": "https://cdn.shopify.com/oxygen-v2/36966/28223/58852/2736878/assets/tiktok-u8iCHXPJ.svg?width=18&height=18&crop=center"
   },
   "cdn": {
-    "favicon": "https://cdn.shopify.com/oxygen-v2/36966/28223/58852/2736878/assets/favicon-BJncYRr2.png",
-    "ogImage": "https://cdn.shopify.com/s/files/1/0671/5382/1848/files/OG_image.png?v=1729689083"
+    "favicon": "favicon-32.png",
+    "ogImage": "assets/og-default.jpg"
   },
   "stylesheets": [
     "15c50ec63e4517.css",
