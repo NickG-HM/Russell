@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+:root { --junipOutlineColor: #637381; }
+
+.shopify-app-block:has([class^="junip-"]) { flex-grow: 1; max-width: 100%; width: inherit; }
+
+[class^="junip-"], [class^="junip-"] *, [class^="junip-"] ::after, [class^="junip-"] ::before, [class^="junip-"]::after, [class^="junip-"]::before { box-sizing: border-box; }
+
+[class^="junip-"] svg { fill: none; stroke: none; }
+
+.junip-product-review, .junip-product-summary, .junip-review-section { animation: 0.01s ease 0s 1 normal none running junipNodeInserted; }
+
+.junip-product-review { outline: none; width: 100%; }
+
+.junip-review-section { display: block !important; }
+
+.junip-product-summary-rendered { display: block; }
+
+.junip-product-summary-clickable { cursor: pointer; }
+
+.junip-product-summary-clickable .junip-product-summary-star-ratings-container { outline: none; transition: box-shadow 0.15s ease-in; }
+
+.junip-product-summary-clickable .junip-product-summary-star-ratings-container:focus { box-shadow: 0 0 0 .2em var(--junipOutlineColor); }
+
+.junip-product-summary-stars-wrapper { text-align: inherit; }
+
+.junip-product-summary-star-ratings-container { align-items: center; display: inline-flex; margin-left: -1px; }
+
+.junip-stars-container { position: relative; }
+
+.junip-stars-container, .junip-stars-container .junip-stars-outline { align-items: center; display: flex; }
+
+.junip-stars-container .junip-stars-filled { align-items: center; display: flex; height: 100%; inset-inline-start: 0px; left: 0px; overflow: hidden; position: absolute; top: 0px; }
+
+.junip-stars-container .junip-stars-filled .junip-star-filled { flex-shrink: 0; }
+
+.junip-product-summary-star { height: 20px; padding: 2px; width: 20px; z-index: inherit; }
+
+.junip-product-summary-star svg { display: block; height: auto; margin: auto; width: auto; }
+
+.junip-product-summary-review-count { color: inherit; margin-left: 3px; }
+
+.junip-see-more { display: block; margin-left: auto; margin-right: auto; margin-top: 16px; }
+
+@keyframes junipNodeInserted { 
+  0% { transform: translateZ(1px); }
+  100% { transform: translateZ(0px); }
+}

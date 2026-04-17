@@ -1,0 +1,101 @@
+[
+  {
+    "slug": "calm-season",
+    "title": "Calm Season",
+    "image": "calm-season.jpg",
+    "price": "$32",
+    "tagline": "Natural Parasite Defence",
+    "rating": 4.89,
+    "reviews": 18
+  },
+  {
+    "slug": "calm-skin",
+    "title": "Calm Skin",
+    "image": "calm-skin.jpg",
+    "price": "$23",
+    "tagline": "Root-Cause Skin & Allergy",
+    "rating": 5,
+    "reviews": 3
+  },
+  {
+    "slug": "calm-mind",
+    "title": "Calm Mind",
+    "image": "calm-mind.jpg",
+    "price": "$32",
+    "tagline": "Anxiety, Behaviour & Reactivity",
+    "rating": 4.47,
+    "reviews": 19
+  },
+  {
+    "slug": "calm-gut",
+    "title": "Calm Gut",
+    "image": "calm-gut.jpg",
+    "price": "$32",
+    "tagline": "Natural Probiotics & Digestive Recovery",
+    "rating": 4.75,
+    "reviews": 28
+  },
+  {
+    "slug": "calm-move",
+    "title": "Calm Move",
+    "image": "calm-move.jpg",
+    "price": "$23",
+    "tagline": "Joints, Mobility & Vitality",
+    "rating": 5,
+    "reviews": 1
+  },
+  {
+    "slug": "calm-oral",
+    "title": "Calm Oral",
+    "image": "calm-oral.jpg",
+    "price": "$32",
+    "tagline": "Dental Microbiome Care",
+    "rating": null,
+    "reviews": null
+  },
+  {
+    "slug": "bundle-starter",
+    "title": "The Starter Bundle",
+    "image": "the-starter-bundle.jpg",
+    "price": "$42",
+    "tagline": "Calm Gut + Calm Oral",
+    "rating": 5,
+    "reviews": 4
+  },
+  {
+    "slug": "bundle-sensitive",
+    "title": "The Sensitive Dog Bundle",
+    "image": "the-sensitive-dog-bundle.jpg",
+    "price": "$85",
+    "tagline": "Calm Skin + Calm Gut + Calm Oral",
+    "rating": 4.76,
+    "reviews": 71
+  },
+  {
+    "slug": "bundle-anxious",
+    "title": "The Anxious Dog Bundle",
+    "image": "the-anxious-dog-bundle.jpg",
+    "price": "$28.80",
+    "tagline": "Calm Mind + Calm Gut · 60 pieces",
+    "rating": 5,
+    "reviews": 2
+  },
+  {
+    "slug": "bundle-active",
+    "title": "The Active Dog Bundle",
+    "image": "the-active-dog-bundle.jpg",
+    "price": "$28.80",
+    "tagline": "Calm Move + Calm Gut + Calm Season · 60 pieces · Orange-Peach",
+    "rating": 5,
+    "reviews": 2
+  },
+  {
+    "slug": "bundle-complete",
+    "title": "The Complete Bundle",
+    "image": "the-complete-bundle.jpg",
+    "price": "$115",
+    "tagline": "All Six Formulas",
+    "rating": 4.75,
+    "reviews": 68
+  }
+]

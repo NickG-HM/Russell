@@ -1,0 +1,149 @@
+[
+  {
+    "outPath": "index.html",
+    "bodyFile": "home.html",
+    "scriptPack": "home",
+    "navActive": "home",
+    "title": "Russell's · Dog wellness rooted in science",
+    "isProduct": false
+  },
+  {
+    "outPath": "why-russells/index.html",
+    "bodyFile": "why-russells.html",
+    "scriptPack": "ethos",
+    "navActive": "ethos",
+    "title": "Russell's · Why Russell's",
+    "isProduct": false
+  },
+  {
+    "outPath": "online-vet/index.html",
+    "bodyFile": "online-vet.html",
+    "scriptPack": "ethos",
+    "navActive": "onlineVet",
+    "title": "Russell's · Online Vet",
+    "isProduct": false
+  },
+  {
+    "outPath": "faq/index.html",
+    "bodyFile": "faq.html",
+    "scriptPack": "faq",
+    "navActive": "faq",
+    "title": "Russell's | FAQs",
+    "isProduct": false
+  },
+  {
+    "outPath": "ingredient-index/index.html",
+    "bodyType": "herbal",
+    "scriptPack": "herbal",
+    "navActive": "herbal",
+    "title": "Russell's · Ingredient Index",
+    "isProduct": false
+  },
+  {
+    "outPath": "formulas-bundles/index.html",
+    "bodyType": "collections",
+    "scriptPack": "faq",
+    "navActive": "shop",
+    "title": "Russell's · Formulas & Bundles",
+    "isProduct": false
+  },
+  {
+    "outPath": "products/calm-season/index.html",
+    "bodyFile": "products/calm-season.html",
+    "scriptPack": "product",
+    "navActive": "none",
+    "title": "Russell's · Calm Season",
+    "isProduct": true,
+    "productCss": ["7de49d76b54c7e.css", "ce3d9874e1c8c4.css", "cb5253d749f9e3.css"]
+  },
+  {
+    "outPath": "products/calm-mind/index.html",
+    "bodyFile": "products/calm-mind.html",
+    "scriptPack": "product",
+    "navActive": "none",
+    "title": "Russell's · Calm Mind",
+    "isProduct": true,
+    "productCss": ["5a93c26304d17a.css", "32017ff51eee5b.css", "39bbd33e41c96e.css"]
+  },
+  {
+    "outPath": "products/calm-gut/index.html",
+    "bodyFile": "products/calm-gut.html",
+    "scriptPack": "product",
+    "navActive": "none",
+    "title": "Russell's · Calm Gut",
+    "isProduct": true,
+    "productCss": ["e47be05ce69bdf.css", "8249e5ba54467d.css", "8e604dec0ca2a5.css"]
+  },
+  {
+    "outPath": "products/bundle-anxious/index.html",
+    "bodyFile": "products/bundle-anxious.html",
+    "scriptPack": "product",
+    "navActive": "none",
+    "title": "Russell's · The Anxious Dog Bundle",
+    "isProduct": true,
+    "productCss": ["3b922217d683dd.css", "08fcbe0c3b6c1b.css", "e2b4b10355cf93.css"]
+  },
+  {
+    "outPath": "products/bundle-active/index.html",
+    "bodyFile": "products/bundle-active.html",
+    "scriptPack": "product",
+    "navActive": "none",
+    "title": "Russell's · The Active Dog Bundle",
+    "isProduct": true,
+    "productCss": ["bdf456d28533ec.css", "2c791a373ddbdd.css", "792dd6d75f6cb3.css"]
+  },
+  {
+    "outPath": "products/calm-skin/index.html",
+    "bodyFile": "products/calm-skin.html",
+    "scriptPack": "product",
+    "navActive": "none",
+    "title": "Russell's · Calm Skin",
+    "isProduct": true,
+    "productCss": ["2c78614bd3c7e9.css", "766fb34391c4c0.css", "418fc15b11340f.css"]
+  },
+  {
+    "outPath": "products/calm-move/index.html",
+    "bodyFile": "products/calm-move.html",
+    "scriptPack": "product",
+    "navActive": "none",
+    "title": "Russell's · Calm Move",
+    "isProduct": true,
+    "productCss": ["36741c57a5f2e7.css", "25fc5a16aab1d7.css", "759652c9dfb033.css"]
+  },
+  {
+    "outPath": "products/calm-oral/index.html",
+    "bodyFile": "products/calm-oral.html",
+    "scriptPack": "product",
+    "navActive": "none",
+    "title": "Russell's · Calm Oral",
+    "isProduct": true,
+    "productCss": ["e47be05ce69bdf.css", "8249e5ba54467d.css", "8e604dec0ca2a5.css"]
+  },
+  {
+    "outPath": "products/bundle-sensitive/index.html",
+    "bodyFile": "products/bundle-sensitive.html",
+    "scriptPack": "product",
+    "navActive": "none",
+    "title": "Russell's · The Sensitive Dog Bundle",
+    "isProduct": true,
+    "productCss": ["d5a34b3b29683a.css", "5e025f7ba21e20.css", "910fa223d1a37f.css"]
+  },
+  {
+    "outPath": "products/bundle-starter/index.html",
+    "bodyFile": "products/bundle-starter.html",
+    "scriptPack": "product",
+    "navActive": "none",
+    "title": "Russell's · The Starter Bundle",
+    "isProduct": true,
+    "productCss": ["88cc4f6a568cb1.css", "db5f21b3552248.css", "2051c6ff0c36ef.css"]
+  },
+  {
+    "outPath": "products/bundle-complete/index.html",
+    "bodyFile": "products/bundle-complete.html",
+    "scriptPack": "product",
+    "navActive": "none",
+    "title": "Russell's · The Complete Bundle",
+    "isProduct": true,
+    "productCss": ["0334db152b6b1e.css", "b682982de43906.css", "9fff2a09491ac7.css"]
+  }
+]

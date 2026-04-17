@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+@font-face { font-family: Styrene; src: url("https://cdn.shopify.com/oxygen-v2/36966/28223/58852/2736878/fonts/StyreneAWeb-Regular.woff2") format("woff2"); }
+
+@font-face { font-family: ApercuMono; src: url("https://cdn.shopify.com/oxygen-v2/36966/28223/58852/2736878/fonts/ApercuMono.otf") format("opentype"); font-weight: 400; font-style: normal; }
+
+@font-face { font-family: Regular; src: url("https://cdn.shopify.com/oxygen-v2/36966/28223/58852/2736878/fonts/RegularRegular.otf") format("opentype"); font-weight: 400; font-style: normal; }
+
+@font-face { font-family: Regular-Bold; src: url("https://cdn.shopify.com/oxygen-v2/36966/28223/58852/2736878/fonts/RegularBold.otf") format("opentype"); font-weight: 700; font-style: normal; }
+
+@font-face { font-family: Regular-Medium; src: url("https://cdn.shopify.com/oxygen-v2/36966/28223/58852/2736878/fonts/RegularMedium.otf") format("opentype"); font-style: normal; }
+
+@font-face { font-family: Regular; src: url("https://cdn.shopify.com/oxygen-v2/36966/28223/58852/2736878/fonts/RegularSemibold.otf") format("opentype"); font-weight: 600; font-style: normal; }
+
+body { font-family: Regular, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; margin: 0px; padding: 0px; }
+
+.junip-product-summary-review-count { font-family: Styrene; font-size: 12px !important; padding-left: 3px !important; padding-top: 2px !important; }
+
+.junip-star-filled, .junip-star-outline { height: 16px !important; width: 14px !important; padding: 2px 1px !important; }
+
+.junip-product-review { font-family: Styrene; letter-spacing: -0.02em !important; }
+
+.junip-filters-container { font-size: 12px !important; }
+
+.junip-avatar { display: none !important; }
+
+.junip-product-review-title { font-family: Styrene; }
+
+.junip-review-list-item-container { padding: 30px 18px; border-radius: 20px; background: rgb(238, 238, 234); font-size: 12px !important; }
+
+.junip-review-title { font-size: 12px !important; color: rgb(35, 31, 32) !important; }
+
+.junip-review-body { font-family: Regular; font-size: 14px !important; letter-spacing: 0em !important; color: rgb(35, 31, 32) !important; }
+
+.junip-btn { font-family: Styrene; border: 2px solid rgb(61, 61, 61) !important; letter-spacing: -0.03em !important; font-size: 12px !important; color: rgb(61, 61, 61) !important; }
+
+.junip-customer-name { font-weight: 600 !important; }
+
+.junip-recommendation-text { font-size: 12px !important; font-weight: 500 !important; }
+
+.junip-powered-by-footer, .junip-review-vote-container, .junip-filter-checkbox-container { display: none !important; }
+
+h4 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+
+h5 { margin-bottom: 1rem; margin-top: 0.5rem; }
+
+a { color: rgb(0, 0, 0); text-decoration: none; }
+
+a:hover { opacity: 0.7; cursor: pointer; }
+
+@media (max-width: 767px) {
+  a:hover { opacity: 1; }
+}
+
+hr { border-bottom: none; border-top: 1px solid rgb(0, 0, 0); margin: 0px; }
+
+pre { white-space: pre-wrap; }
+
+body { display: flex; flex-direction: column; min-height: 100vh; }
+
+section { padding: 1rem 0px; }
+
+@media (min-width: 768px) {
+  section { padding: 2rem 0px; }
+}
+
+fieldset { display: flex; flex-direction: column; margin-bottom: 0.5rem; padding: 1rem; }
+
+legend { font-weight: 600; margin-bottom: 0.5rem; }
+
+ul { list-style: none; margin: 0px; padding: 0px; }
+
+li { margin-bottom: 0.5rem; }
+
+dl { margin: 0.5rem 0px; }
+
+code { background: rgb(221, 221, 221); border-radius: 4px; font-family: monospace; padding: 0.25rem; }

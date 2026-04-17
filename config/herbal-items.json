@@ -1,0 +1,42 @@
+[
+  {
+    "index": 1,
+    "swatch": "#ffffff",
+    "icon": "c380fb988103d1.svg",
+    "name": "Lion's Mane",
+    "foundIn": "Calm Skin, Calm Mind, Calm Gut",
+    "description": "The only natural compound shown to stimulate Nerve Growth Factor in mammals. Supports gut barrier integrity and cognitive function. The reason Calm Skin, Calm Mind, and Calm Gut work at the depth they do."
+  },
+  {
+    "index": 2,
+    "swatch": "#8d7945",
+    "icon": "bcfe9075261173.svg",
+    "name": "Reishi",
+    "foundIn": "All six formulas",
+    "description": "The adaptogenic anchor across every formula. Modulates immune pathways in both directions — effective for immune-deficient and allergic dogs alike. Regulates cortisol under both chronic and acute stress. Present in all six formulas because almost every biological system it touches needs it."
+  },
+  {
+    "index": 3,
+    "swatch": "#d2727b",
+    "icon": "620685b6f23f4b.svg",
+    "name": "Cordyceps",
+    "foundIn": "Calm Mind, Calm Move",
+    "description": "Increases cellular ATP production and oxygen efficiency. Supports nervous system energy and resilience. The mechanism behind Calm Mind's regulatory depth and the reason Calm Move goes beyond joint support into genuine vitality."
+  },
+  {
+    "index": 4,
+    "swatch": "#473220",
+    "icon": "c7f1d0571ba6ab.svg",
+    "name": "Chaga",
+    "foundIn": "Calm Season, Calm Move, Calm Oral",
+    "description": "One of the highest ORAC antioxidant scores found in nature. Amplifies immune cell activity. Strengthens systemic defence at the level that makes Calm Season's approach possible — and gives Calm Oral its anti-biofilm foundation."
+  },
+  {
+    "index": 5,
+    "swatch": "#d2727b",
+    "icon": "b01af15bd3bfa6.svg",
+    "name": "Turkey Tail",
+    "foundIn": "Calm Season, Calm Skin, Calm Gut",
+    "description": "PSK and PSP polysaccharides with documented canine trials at the University of Pennsylvania, 2012. The most researched of the five. Supports gut microbiome diversity and immune modulation. The biological core of Calm Gut and a key active in Calm Skin."
+  }
+]

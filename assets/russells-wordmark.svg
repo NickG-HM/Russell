@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 28" overflow="visible" role="img" aria-label="Russell's">
+  <style type="text/css"><![CDATA[
+    .wm {
+      fill: #2E2E2D;
+      font-family: "Arial Black", Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+    }
+  ]]></style>
+  <text x="6" y="20" class="wm">RUSSELL'S</text>
+</svg>

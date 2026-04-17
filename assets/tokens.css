@@ -1,0 +1,579 @@
+/* Russell's design tokens (banner strip + accents) */
+:root {
+  --russells-banner-bg: #2e2e2d;
+  --russells-banner-fg: #ffffff;
+  --russells-accent-clay: #8d7945;
+}
+
+.russells-banner-bg {
+  background-color: var(--russells-banner-bg);
+}
+
+.russells-banner-text {
+  color: var(--russells-banner-fg);
+}
+
+/* Home: legacy Hydrogen opacity + tall grid; hero row sizes to the image */
+.home .home-screen-grid {
+  opacity: 1 !important;
+  transform: none !important;
+  align-items: start;
+  height: auto !important;
+  min-height: 0;
+}
+
+.home .image-container,
+.home .image-container.fade-in {
+  opacity: 1 !important;
+  height: auto !important;
+  width: 100%;
+  align-self: start;
+  justify-content: flex-start;
+}
+
+/*
+ * Hero: intrinsic photo aspect (no a934 mobile aspect-ratio box, no cover crop).
+ * a934 sets .image-in-container { background-image: var(--hero-desktop-image) } on md+.
+ */
+.image-in-container.home-hero-banner {
+  background-image: none !important;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .image-in-container.home-hero-banner {
+    aspect-ratio: unset !important;
+    height: auto !important;
+  }
+}
+
+.home-hero-banner__img {
+  border-radius: 30px;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Any mirrored section still using inline opacity:0.01 (e.g. ingredient cards) */
+main [style*='opacity:0.01'],
+main [style*='opacity: 0.01'] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Closed nav drawer must never sit above content (belt-and-suspenders) */
+#russells-nav-overlay.overlay:not(.expanded) {
+  pointer-events: none !important;
+}
+
+/*
+ * Cart drawer: keep scrim + panel in sync (bundle had 0.4s vs 0.2s).
+ */
+.overlay {
+  transition:
+    opacity 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 0.38s;
+}
+
+.overlay.expanded {
+  transition:
+    opacity 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 0s;
+}
+
+.overlay aside {
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.overlay.expanded aside {
+  will-change: transform;
+}
+
+/*
+ * Nav menu only: never animate opacity on the overlay root — that alpha-multiplies
+ * the frosted aside + backdrop-filter, so it looks “see-through” then snaps when
+ * opacity reaches 1. Fade a ::before scrim; aside stays at final opacity and only slides.
+ */
+#russells-nav-overlay.overlay {
+  background: transparent !important;
+  opacity: 1 !important;
+  transition: visibility 0s linear 0.38s;
+}
+
+#russells-nav-overlay.overlay.expanded {
+  transition: visibility 0s linear 0s;
+}
+
+#russells-nav-overlay.overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#russells-nav-overlay.overlay.expanded::before {
+  opacity: 1;
+}
+
+#russells-nav-overlay.overlay .close-outside {
+  z-index: 1;
+}
+
+#russells-nav-overlay.overlay aside {
+  z-index: 2;
+}
+
+#russells-nav-overlay .aside-transparent {
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay {
+    transition-duration: 0.01ms, 0s !important;
+    transition-delay: 0s !important;
+  }
+
+  .overlay.expanded {
+    transition-duration: 0.01ms, 0s !important;
+  }
+
+  .overlay aside {
+    transition-duration: 0.01ms !important;
+  }
+
+  #russells-nav-overlay.overlay {
+    transition-duration: 0.01ms !important;
+  }
+
+  #russells-nav-overlay.overlay::before {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Layout + Ingredients + footer (Tailwind bundles omit many of these rules) */
+/* -------------------------------------------------------------------------- */
+
+/* Footer: full width of <main> when a direct child */
+.site-footer-root {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+}
+
+/*
+ * Footer size is authoritative. Background SVG always fits entirely inside the footer
+ * (letterboxed if needed); scales with the footer box at any zoom — never drives layout.
+ */
+.site-footer-root > .site-footer-bg-svg {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+.site-footer-root > .site-footer-root-columns {
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 1024px) {
+  .site-footer-root {
+    height: 469px;
+    min-height: 469px;
+  }
+
+  .site-footer-root > .site-footer-root-columns {
+    height: 100%;
+    min-height: 100%;
+  }
+}
+
+/* Break out of .herbal-page-inner horizontal padding (px-4 / md:px-[30px]) */
+.herbal-page-inner > .site-footer-root {
+  width: calc(100% + 2rem);
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+@media (min-width: 768px) {
+  .herbal-page-inner > .site-footer-root {
+    width: calc(100% + 60px);
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+}
+
+.russels-logo-header-link {
+  flex-shrink: 0;
+}
+
+.russels-logo-header {
+  flex-shrink: 0;
+  height: 20px;
+  width: auto;
+  max-width: 280px;
+}
+
+@media (min-width: 768px) {
+  .russels-logo-header {
+    height: 24px;
+    max-width: 304px;
+  }
+}
+
+.russels-logo-menu {
+  height: 22px;
+  width: auto;
+  max-width: 268px;
+}
+
+.russels-logo-footer-mobile {
+  max-width: calc(100% - 32px);
+}
+
+/* Mobile footer: wordmark sets lockup height; “bubble” character scales to that band */
+@media (max-width: 1023px) {
+  .russels-logo-footer-mobile {
+    max-width: 100%;
+  }
+
+  .russels-brand-mobile-lockup {
+    line-height: 0;
+  }
+
+  .russels-character-mobile {
+    object-fit: contain;
+    object-position: left bottom;
+  }
+}
+
+.product-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgb(248, 248, 245) max(0%, calc(100% - 1000px)),
+    rgb(211, 199, 185) max(0%, calc(100% - 220px)),
+    rgb(248, 248, 245) 100%
+  );
+}
+
+/* Product PDP: horizontal scroll carousel + visible pager dots
+   Grid + display:contents avoids flex % basis bugs (track never got scrollWidth). */
+.product-carousel__viewport {
+  width: 100%;
+}
+
+.product-carousel__viewport--carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  touch-action: pan-x pinch-zoom;
+}
+
+.product-carousel__viewport--carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.product-carousel__track--contents {
+  display: contents;
+}
+
+.product-carousel__slide {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.product-carousel__dot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  min-height: 8px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 9999px;
+  background: rgb(212, 208, 200);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.product-carousel__dot.is-active {
+  background: rgb(61, 61, 61);
+  transform: scale(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-carousel__dot {
+    transition-duration: 0.01ms;
+  }
+}
+
+/* PDP: one accent for tags, selected quantity, Add to Bag (--product-accent on .order-second column) */
+.product-column-accent .product-purchase .product-option-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.product-column-accent .product-tag-pill,
+.product-column-accent .product-purchase .product-option-pill--selected,
+.product-column-accent .product-purchase a.product-option-pill--selected,
+.product-column-accent .product-purchase button[type='submit'] {
+  background: var(--product-accent) !important;
+  background-color: var(--product-accent) !important;
+  border-color: var(--product-accent) !important;
+  color: #fff !important;
+}
+
+.product-column-accent .product-purchase .product-option-pill:not(.product-option-pill--selected) {
+  background: #fff !important;
+  background-color: #fff !important;
+  border: 1px solid var(--product-accent) !important;
+  color: var(--product-accent) !important;
+}
+
+/* Matches bundled .herbal-gradient hue; last stops ease into body/footer (rgb(248,248,245)). */
+.herbal-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgb(248, 248, 245) max(0%, calc(100% - 1400px)),
+    rgb(178, 175, 171) max(0%, calc(100% - 260px)),
+    rgb(248, 248, 245) 100%
+  );
+}
+
+.herbal-page-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100dvh - 100px);
+  box-sizing: border-box;
+  overflow-x: visible;
+}
+
+@media (min-width: 768px) {
+  .herbal-page-layout {
+    min-height: calc(100dvh - 144px);
+  }
+}
+
+.herbal-page-inner {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: visible;
+}
+
+.herbal-page-inner > *:last-child {
+  flex: 0 0 auto;
+  margin-top: clamp(1.5rem, 4vw, 2.75rem);
+}
+
+.herbal-page-inner > *:last-child .russels-brand-stack .russels-character-footer {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.herbal-page-inner > *:last-child [class*='mb-[-20%]'] {
+  margin-bottom: 0;
+}
+
+.herbal-page-inner > *:last-child [class*='ml-[-20%]'] {
+  margin-left: 0;
+}
+
+.herbal-cards-section {
+  width: 100%;
+  min-height: 0;
+  padding-top: clamp(0.5rem, 1.25vw, 0.9375rem);
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex: 1 1 auto;
+  flex-shrink: 0;
+}
+
+.herbal-cards-grid {
+  display: grid;
+  box-sizing: border-box;
+  column-gap: clamp(1rem, 2.5vw, 1.75rem);
+  row-gap: clamp(1.25rem, 3vw, 1.75rem);
+  width: 100%;
+  max-width: 1350px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: clamp(0.25rem, 1.5vw, 0.75rem);
+  grid-template-columns: 1fr;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .herbal-cards-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.herbal-card-cell {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  align-self: stretch;
+  min-width: 0;
+  width: 100%;
+}
+
+.herbal-card-surface {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: min(22.375rem, 100%);
+  min-height: 25rem;
+  height: 100%;
+  align-self: stretch;
+  overflow: hidden;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 768px) {
+  .herbal-card-surface {
+    max-width: min(25.5625rem, 100%);
+  }
+}
+
+.herbal-card-inner {
+  min-height: 0;
+  flex: 1 1 auto;
+  height: 100%;
+}
+
+.herbal-card-surface .herbal-card-body {
+  min-height: 0;
+  flex: 1 1 auto;
+}
+
+.herbal-card-surface .herbal-card-body-main {
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.herbal-card-body-main > img {
+  display: block;
+  max-width: min(5.625rem, 100%);
+  height: auto;
+}
+
+.herbal-cards-grid__row2 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-self: stretch;
+  box-sizing: border-box;
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+  width: 100%;
+  padding-inline: 0;
+}
+
+@media (min-width: 768px) {
+  .herbal-cards-grid__row2 {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: clamp(1rem, 2.5vw, 1.75rem);
+  }
+
+  .herbal-cards-grid__row2 > .herbal-card-cell {
+    width: auto;
+    max-width: min(25.5625rem, 100%);
+    flex: 0 1 min(25.5625rem, 100%);
+  }
+}
+
+/* Ingredient Index — Co-Actives by Formula (below mushroom cards) */
+.co-actives-section {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1350px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: clamp(-0.35rem, -0.8vw, -0.125rem);
+  padding-top: clamp(1rem, 2.5vw, 1.75rem);
+  padding-bottom: clamp(1.5rem, 4vw, 2.75rem);
+  padding-inline: clamp(0.25rem, 1.5vw, 0.75rem);
+  border-top: 1px solid rgb(178 175 171);
+}
+
+.co-actives-section__inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.co-actives-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .co-actives-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(1rem, 2.5vw, 1.75rem);
+    row-gap: clamp(1.25rem, 3vw, 1.75rem);
+  }
+
+  .co-active-card--wide {
+    grid-column: 1 / -1;
+    max-width: min(48rem, 100%);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+}
+
+.co-active-card {
+  box-sizing: border-box;
+  background-color: rgb(243 243 240);
+  border: 1px solid rgb(212 199 185);
+  border-radius: 1.25rem;
+  padding: clamp(1.125rem, 2.5vw, 1.5rem) clamp(1.25rem, 3vw, 1.75rem);
+  min-height: 0;
+}

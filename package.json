@@ -1,0 +1,15 @@
+{
+  "name": "russells-static-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "extract-bodies": "node tools/extract-bodies.mjs",
+    "extract-herbal": "node tools/extract-herbal-json.mjs",
+    "archive-assets": "node tools/archive-unused-assets.mjs",
+    "optimize-images": "node tools/optimize-images.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}
